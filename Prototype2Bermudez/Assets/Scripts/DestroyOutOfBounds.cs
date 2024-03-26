@@ -6,9 +6,14 @@ public class DestroyOutOfBounds : MonoBehaviour
 {
     private float topBound = 30;
     private float lowerBound = -10;
-    
+    private float sideBound = 30;
+    private GameManager gameManager;
 
-    // Update is called once per frame
+
+    private void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
     void Update()
     {
         if (transform.position.z > topBound)
